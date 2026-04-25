@@ -143,16 +143,10 @@ The library uses Tailwind CSS for styling. All colors and utilities are configur
   Custom Button
 </Button>
 
-<Card className="border-primary-500 border-2">
-  Custom Card
-</Card>
-```
-
 ## 🧩 What We're Building
 
 Right now we have:
 - ✅ **Button** - Clickable buttons with different styles
-- ✅ **Card** - Containers for content
 
 ### What We Need Help With:
 - 📝 **Input** - Text input fields
