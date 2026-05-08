@@ -1,6 +1,7 @@
 import { ChevronDown } from "lucide-react"
 import { cn } from "../../utils/cn"
 import { createContext, useContext, useState } from "react";
+import PropTypes from "prop-types";
 
 const AccordionContext = createContext(null);
 const AccordionItemContext = createContext(null);
@@ -78,3 +79,28 @@ export const AccordionContent = ({ children, className }) => {
     )
 }
 
+Accordion.propTypes = {
+    children: PropTypes.node.isRequired,
+    className: PropTypes.string,
+};
+
+AccordionItem.propTypes = {
+    children: PropTypes.node.isRequired,
+
+    id: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+    ]).isRequired,
+
+    className: PropTypes.string,
+};
+
+AccordionTitle.propTypes = {
+    children: PropTypes.node.isRequired,
+    className: PropTypes.string,
+};
+
+AccordionContent.propTypes = {
+    children: PropTypes.node.isRequired,
+    className: PropTypes.string,
+};
