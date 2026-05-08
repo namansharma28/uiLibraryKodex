@@ -20,8 +20,14 @@ export const Accordion = ({ children, className }) => {
 }
 
 export const AccordionItem = ({ children, className }) => {
+    const value = {
+
+    }
+
     return (
-        <div className={cn(className)}>{children}</div>
+        <AccordionItemContext.Provider value={value}>
+            <div className={cn(className)}>{children}</div>
+        </AccordionItemContext.Provider>
     )
 }
 
