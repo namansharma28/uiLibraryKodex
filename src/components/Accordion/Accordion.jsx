@@ -1,11 +1,21 @@
 import { ChevronDown } from "lucide-react"
 import { cn } from "../../utils/cn"
+import { createContext } from "react";
+
+const AccordionContext = createContext(null);
+const AccordionItemContext = createContext(null);
 
 export const Accordion = ({ children, className }) => {
+    const value = {
+
+    }
+
     return (
-        <div className={cn("max-w-lg w-full divide-y divide-zinc-300 min-h-96", className)}>
-            {children}
-        </div>
+        <AccordionContext.Provider value={value}>
+            <div className={cn("max-w-lg w-full divide-y divide-zinc-300 min-h-96", className)}>
+                {children}
+            </div>
+        </AccordionContext.Provider>
     )
 }
 
