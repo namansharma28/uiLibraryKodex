@@ -1,7 +1,7 @@
 import {
   Button,
 } from '../src';
-import { Accordion, AccordionContent, AccordionItem, AccordionTitle } from '../src/components/Accordion/Accordion';
+import { Accordion, AccordionContent, AccordionItem, AccordionTitle } from '../src/components/Accordion';
 
 function App() {
 
