@@ -1,13 +1,21 @@
 import { ChevronDown } from "lucide-react"
 import { cn } from "../../utils/cn"
-import { createContext } from "react";
+import { createContext, useContext, useState } from "react";
 
 const AccordionContext = createContext(null);
 const AccordionItemContext = createContext(null);
 
 export const Accordion = ({ children, className }) => {
-    const value = {
+    const [selected, setSelected] = useState(null);
 
+    const toggle = (id) => {
+        setSelected((prev) => (prev === id ? null : id));
+    };
+
+    const value = {
+        selected,
+        setSelected,
+        toggle
     }
 
     return (
@@ -19,9 +27,9 @@ export const Accordion = ({ children, className }) => {
     )
 }
 
-export const AccordionItem = ({ children, className }) => {
+export const AccordionItem = ({ children, id, className }) => {
     const value = {
-
+        id
     }
 
     return (
@@ -32,24 +40,38 @@ export const AccordionItem = ({ children, className }) => {
 }
 
 export const AccordionTitle = ({ children, className }) => {
+    const { selected, toggle } = useContext(AccordionContext);
+    const { id } = useContext(AccordionItemContext);
+
+    const isOpen = selected === id;
+
     return (
         <button
+            onClick={() => toggle(id)}
             className={cn("flex items-center justify-between w-full py-1.5 cursor-pointer font-medium hover:underline decoration-1", className)}
         >
             {children}
             <span>
-                <ChevronDown className={cn("w-5 h-5 text-zinc-500")} />
+                <ChevronDown className={cn("w-5 h-5 text-zinc-500", isOpen && "rotate-180")} />
             </span>
         </button>
     )
 }
 
 export const AccordionContent = ({ children, className }) => {
+    const { selected } = useContext(AccordionContext);
+    const { id } = useContext(AccordionItemContext);
+
+    const isOpen = selected === id;
+
     return (
         <div
-            className={cn(className)}
+            className={cn(
+                "grid transition-all duration-300 font-normal",
+                isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
+                className)}
         >
-            <div>
+            <div className="overflow-hidden">
                 <div className="pb-1.5">{children}</div>
             </div>
         </div>

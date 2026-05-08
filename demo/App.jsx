@@ -64,7 +64,7 @@ function App() {
 
         <Accordion>
           {accordionData.map(({ id, title, content }) => (
-            <AccordionItem key={id}>
+            <AccordionItem key={id} id={id}>
               <AccordionTitle>{title}</AccordionTitle>
               <AccordionContent>{content}</AccordionContent>
             </AccordionItem>
