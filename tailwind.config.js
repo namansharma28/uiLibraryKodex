@@ -5,6 +5,7 @@ export default {
     "./src/**/*.{js,jsx}",
     "./demo/**/*.{js,jsx}",
   ],
+
   theme: {
     extend: {
       colors: {
@@ -20,6 +21,7 @@ export default {
           800: '#075985',
           900: '#0c4a6e',
         },
+
         secondary: {
           50: '#faf5ff',
           100: '#f3e8ff',
@@ -33,7 +35,71 @@ export default {
           900: '#581c87',
         },
       },
+
+      animation: {
+        
+  'toast-in-top':
+    'toastInTop 0.3s ease-out',
+
+  'toast-in-bottom':
+    'toastInBottom 0.3s ease-out',
+
+    'toast-out':
+  'toastOut 0.2s ease-in forwards',
+
+ 'progress':
+  'progress linear forwards',
+},
+
+keyframes: {
+  progress: {
+  '0%': {
+    width: '100%',
+  },
+
+  '100%': {
+    width: '0%',
+  },
+},
+  toastOut: {
+  '0%': {
+    opacity: '1',
+  },
+
+  '100%': {
+    opacity: '0',
+  },
+},
+  toastInTop: {
+    '0%': {
+      opacity: '0',
+      transform:
+        'translateY(-20px) scale(0.95)',
+    },
+
+    '100%': {
+      opacity: '1',
+      transform:
+        'translateY(0) scale(1)',
     },
   },
+
+  toastInBottom: {
+    '0%': {
+      opacity: '0',
+      transform:
+        'translateY(20px) scale(0.95)',
+    },
+
+    '100%': {
+      opacity: '1',
+      transform:
+        'translateY(0) scale(1)',
+    },
+  },
+},
+    },
+  },
+
   plugins: [],
 }
