@@ -1,6 +1,9 @@
+import { Button } from '../src';
 import {
-  Button,
-} from '../src';
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from '../src/components/Tooltip/Tooltip';
 
 function App() {
   return (
@@ -35,7 +38,28 @@ function App() {
         </div>
       </section>
       <section>
+        <h2 className="text-3xl font-semibold mb-4">Tooltip</h2>
+        <div className="flex gap-6">
+          <Tooltip>
+            <TooltipTrigger variant="default">Hover me</TooltipTrigger>
+            <TooltipContent side="bottom">Hello Tooltip</TooltipContent>
+          </Tooltip>
 
+          <Tooltip>
+            <TooltipTrigger variant="dark">Hover me</TooltipTrigger>
+            <TooltipContent side="left">Hello Tooltip</TooltipContent>
+          </Tooltip>
+
+          <Tooltip>
+            <TooltipTrigger variant="outline">Hover me</TooltipTrigger>
+            <TooltipContent side="right">Hello Tooltip</TooltipContent>
+          </Tooltip>
+
+          <Tooltip>
+            <TooltipTrigger variant="ghost">Hover me</TooltipTrigger>
+            <TooltipContent side="top">Hello Tooltip</TooltipContent>
+          </Tooltip>
+        </div>
       </section>
     </div>
   );
