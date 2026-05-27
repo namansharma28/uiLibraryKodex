@@ -5,6 +5,12 @@ import {
   useToast,
 } from '../src';
 
+import { 
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from '../src/components/Tooltip/Tooltip';
+
 function App() {
   const {
     toasts,
@@ -64,10 +70,11 @@ function App() {
         </div>
       </section>
 
+
       {/* TOAST TYPES */}
       <section className="mb-16">
         <h2 className="text-2xl font-semibold mb-6">
-          Types
+         Toast Types 
         </h2>
 
         <div className="flex gap-4 flex-wrap">
@@ -152,13 +159,14 @@ function App() {
           >
             Promise
           </button>
-        </div>
-      </section>
 
-      {/* POSITION SECTION */}
+          </div>
+          </section>
+
+            {/* POSITION SECTION */}
       <section className="mb-16">
         <h2 className="text-2xl font-semibold mb-4">
-          Position
+         Toast Positions
         </h2>
 
         <div className="flex gap-4 flex-wrap">
@@ -187,6 +195,38 @@ function App() {
           ))}
         </div>
       </section>
+
+
+
+
+{/* TOOLTIP SECTION */}
+      <section>
+        <h2 className="text-3xl font-semibold mb-4">Tooltip</h2>
+        <div className="flex gap-6">
+          <Tooltip>
+            <TooltipTrigger variant="default">Hover me</TooltipTrigger>
+            <TooltipContent side="bottom">Hello Tooltip</TooltipContent>
+          </Tooltip>
+
+          <Tooltip>
+            <TooltipTrigger variant="dark">Hover me</TooltipTrigger>
+            <TooltipContent side="left">Hello Tooltip</TooltipContent>
+          </Tooltip>
+
+          <Tooltip>
+            <TooltipTrigger variant="outline">Hover me</TooltipTrigger>
+            <TooltipContent side="right">Hello Tooltip</TooltipContent>
+          </Tooltip>
+
+          <Tooltip>
+            <TooltipTrigger variant="ghost">Hover me</TooltipTrigger>
+            <TooltipContent side="top">Hello Tooltip</TooltipContent>
+          </Tooltip>
+
+        </div>
+      </section>
+
+    
 
       {/* TOAST CONTAINERS */}
       {[
