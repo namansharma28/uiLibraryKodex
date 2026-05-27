@@ -5,6 +5,7 @@ export default {
     "./src/**/*.{js,jsx}",
     "./demo/**/*.{js,jsx}",
   ],
+
   theme: {
     extend: {
       colors: {
@@ -20,6 +21,7 @@ export default {
           800: '#075985',
           900: '#0c4a6e',
         },
+
         secondary: {
           50: '#faf5ff',
           100: '#f3e8ff',
@@ -33,7 +35,29 @@ export default {
           900: '#581c87',
         },
       },
+
+      animation: {
+        'hover-card':
+          'hoverCard 0.2s ease-out',
+      },
+
+      keyframes: {
+        hoverCard: {
+          '0%': {
+            opacity: '0',
+            transform:
+              'translate(-50%, -8px) scale(0.96)',
+          },
+
+          '100%': {
+            opacity: '1',
+            transform:
+              'translate(-50%, 0px) scale(1)',
+          },
+        },
+      },
     },
   },
+
   plugins: [],
 }

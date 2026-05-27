@@ -4,6 +4,11 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '../src/components/Tooltip/Tooltip';
+import {
+  HoverCard,
+  HoverCardTrigger,
+  HoverCardContent,
+} from '../src';
 
 function App() {
   return (
@@ -61,6 +66,36 @@ function App() {
           </Tooltip>
         </div>
       </section>
+
+
+
+      {/* HoverCard */}
+      <section className="mb-16 mt-10 ">
+  <h2 className="text-3xl font-semibold mb-6">
+    Hover Card
+  </h2>
+
+  <HoverCard>
+    <HoverCardTrigger>
+      <button className="rounded-xl bg-black text-white px-5 py-3">
+        Hover Me
+      </button>
+    </HoverCardTrigger>
+
+    <HoverCardContent>
+      <div className="space-y-2">
+        <h3 className="font-semibold text-lg">
+          Hover Card
+        </h3>
+
+        <p className="text-sm text-black/70">
+          This is a beautiful hover card
+          component with glassmorphism UI.
+        </p>
+      </div>
+    </HoverCardContent>
+  </HoverCard>
+</section>
     </div>
   );
 }
