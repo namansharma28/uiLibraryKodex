@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: 'class',
-
   content: [
     "./index.html",
     "./src/**/*.{js,jsx}",
@@ -42,6 +41,30 @@ export default {
       animation: {
         'progress-stripes':
           'progressStripes 1s linear infinite',
+
+        'hover-card-top':
+          'hoverCardTop 0.2s ease-out',
+
+        'hover-card-bottom':
+          'hoverCardBottom 0.2s ease-out',
+
+        'hover-card-left':
+          'hoverCardLeft 0.2s ease-out',
+
+        'hover-card-right':
+          'hoverCardRight 0.2s ease-out',
+
+        'hover-card-out-top':
+          'hoverCardOutTop 0.2s ease-in forwards',
+
+        'hover-card-out-bottom':
+          'hoverCardOutBottom 0.2s ease-in forwards',
+
+        'hover-card-out-left':
+          'hoverCardOutLeft 0.2s ease-in forwards',
+
+        'hover-card-out-right':
+          'hoverCardOutRight 0.2s ease-in forwards',
       },
 
       keyframes: {
@@ -54,6 +77,118 @@ export default {
           '100%': {
             backgroundPosition:
               '0 0',
+          },
+        },
+
+        hoverCardTop: {
+          '0%': {
+            opacity: '0',
+            transform:
+              'translate(-50%, 8px) scale(0.96)',
+          },
+
+          '100%': {
+            opacity: '1',
+            transform:
+              'translate(-50%, 0px) scale(1)',
+          },
+        },
+
+        hoverCardBottom: {
+          '0%': {
+            opacity: '0',
+            transform:
+              'translate(-50%, -8px) scale(0.96)',
+          },
+
+          '100%': {
+            opacity: '1',
+            transform:
+              'translate(-50%, 0px) scale(1)',
+          },
+        },
+
+        hoverCardLeft: {
+          '0%': {
+            opacity: '0',
+            transform:
+              'translate(8px, -50%) scale(0.96)',
+          },
+
+          '100%': {
+            opacity: '1',
+            transform:
+              'translate(0px, -50%) scale(1)',
+          },
+        },
+
+        hoverCardRight: {
+          '0%': {
+            opacity: '0',
+            transform:
+              'translate(-8px, -50%) scale(0.96)',
+          },
+
+          '100%': {
+            opacity: '1',
+            transform:
+              'translate(0px, -50%) scale(1)',
+          },
+        },
+
+        hoverCardOutTop: {
+          '0%': {
+            opacity: '1',
+            transform:
+              'translate(-50%, 0px) scale(1)',
+          },
+
+          '100%': {
+            opacity: '0',
+            transform:
+              'translate(-50%, 8px) scale(0.96)',
+          },
+        },
+
+        hoverCardOutBottom: {
+          '0%': {
+            opacity: '1',
+            transform:
+              'translate(-50%, 0px) scale(1)',
+          },
+
+          '100%': {
+            opacity: '0',
+            transform:
+              'translate(-50%, -8px) scale(0.96)',
+          },
+        },
+
+        hoverCardOutLeft: {
+          '0%': {
+            opacity: '1',
+            transform:
+              'translate(0px, -50%) scale(1)',
+          },
+
+          '100%': {
+            opacity: '0',
+            transform:
+              'translate(8px, -50%) scale(0.96)',
+          },
+        },
+
+        hoverCardOutRight: {
+          '0%': {
+            opacity: '1',
+            transform:
+              'translate(0px, -50%) scale(1)',
+          },
+
+          '100%': {
+            opacity: '0',
+            transform:
+              'translate(-8px, -50%) scale(0.96)',
           },
         },
       },
