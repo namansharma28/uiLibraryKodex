@@ -1,12 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
+
   content: [
     "./index.html",
     "./src/**/*.{js,jsx}",
     "./demo/**/*.{js,jsx}",
   ],
+
   theme: {
     extend: {
+
       colors: {
         primary: {
           50: '#f0f9ff',
@@ -20,6 +24,7 @@ export default {
           800: '#075985',
           900: '#0c4a6e',
         },
+
         secondary: {
           50: '#faf5ff',
           100: '#f3e8ff',
@@ -33,7 +38,28 @@ export default {
           900: '#581c87',
         },
       },
+
+      animation: {
+        'progress-stripes':
+          'progressStripes 1s linear infinite',
+      },
+
+      keyframes: {
+        progressStripes: {
+          '0%': {
+            backgroundPosition:
+              '1rem 0',
+          },
+
+          '100%': {
+            backgroundPosition:
+              '0 0',
+          },
+        },
+      },
+
     },
   },
+
   plugins: [],
 }
