@@ -4,8 +4,12 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '../src/components/Tooltip/Tooltip';
+import { Progress } from '../src';
+import { useState } from 'react';
 
 function App() {
+  const [progressValue, setProgressValue] =
+  useState(50);
   return (
     <div className="max-w-7xl mx-auto p-8">
       <h1 className="text-4xl font-bold mb-8 text-primary-600">
@@ -61,6 +65,129 @@ function App() {
           </Tooltip>
         </div>
       </section>
+
+
+
+
+      {/* Progress */}
+      <section className="mb-16 mt-10">
+  <h2 className="text-3xl font-semibold mb-6">
+    Progress
+  </h2>
+
+<div className="gap-10 flex-col flex ">
+  {/* Default Variant */}
+
+  <div className="max-w-md  space-y-6">
+    <h1>Default Progress</h1>
+
+    <Progress
+      value={progressValue}
+      label="Your Progress..."
+  //      striped
+  // animated
+      status={
+        progressValue < 30
+          ? 'Starting...'
+          : progressValue < 70
+          ? 'Updating...'
+          : progressValue < 100
+          ? 'Almost Done...'
+          : 'Completed!'
+      }
+      timeLeft={
+        progressValue < 100
+          ? `${100 - progressValue}s left`
+          : 'Done'
+      }
+    />
+
+    <input
+      type="range"
+      min="0"
+      max="100"
+      value={progressValue}
+      onChange={(e) =>
+        setProgressValue(
+          Number(e.target.value)
+        )
+      }
+      className="w-full accent-violet-600"
+    />
+
+  </div>
+
+  {/* Variant Variants */}
+  <div className="space-y-4  ">
+    <h1>Variant Progress</h1>
+
+  <Progress
+    value={75}
+    variant="success"
+    status="Completed Successfully"
+  />
+
+  <Progress
+    value={55}
+    variant="warning"
+    status="Needs Attention"
+  />
+
+  <Progress
+    value={30}
+    variant="error"
+    status="Upload Failed"
+  />
+
+  <Progress
+    value={85}
+    variant="gradient"
+    status="Processing..."
+  />
+
+</div>
+
+{/* Size Variants */}
+<div className="space-y-4">
+    <h1>Size Variants</h1>
+
+  <Progress
+    value={40}
+    size="sm"
+    status="Small Progress"
+  />
+
+  <Progress
+    value={60}
+    size="md"
+    status="Medium Progress"
+  />
+
+  <Progress
+    value={80}
+    size="lg"
+    status="Large Progress"
+  />
+
+</div>
+
+{/* Striped and Animated Variants */}
+<div className="space-y-4">
+    <h1>Striped and Animated Progress</h1>
+
+  <Progress
+  value={70}
+  variant="gradient"
+  striped
+  animated
+  status="Processing..."
+  label="Animated Progress"
+/>
+
+</div>
+
+</div>
+</section>
     </div>
   );
 }
