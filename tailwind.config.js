@@ -65,6 +65,18 @@ export default {
 
         'hover-card-out-right':
           'hoverCardOutRight 0.2s ease-in forwards',
+
+        'toast-in-top':
+          'toastInTop 0.3s ease-out',
+
+        'toast-in-bottom':
+          'toastInBottom 0.3s ease-out',
+
+        'toast-out':
+          'toastOut 0.2s ease-in forwards',
+
+        'progress':
+          'progress linear forwards',
       },
 
       keyframes: {
@@ -189,6 +201,54 @@ export default {
             opacity: '0',
             transform:
               'translate(-8px, -50%) scale(0.96)',
+          },
+        },
+
+        progress: {
+          '0%': {
+            width: '100%',
+          },
+
+          '100%': {
+            width: '0%',
+          },
+        },
+
+        toastOut: {
+          '0%': {
+            opacity: '1',
+          },
+
+          '100%': {
+            opacity: '0',
+          },
+        },
+
+        toastInTop: {
+          '0%': {
+            opacity: '0',
+            transform:
+              'translateY(-20px) scale(0.95)',
+          },
+
+          '100%': {
+            opacity: '1',
+            transform:
+              'translateY(0) scale(1)',
+          },
+        },
+
+        toastInBottom: {
+          '0%': {
+            opacity: '0',
+            transform:
+              'translateY(20px) scale(0.95)',
+          },
+
+          '100%': {
+            opacity: '1',
+            transform:
+              'translateY(0) scale(1)',
           },
         },
       },
