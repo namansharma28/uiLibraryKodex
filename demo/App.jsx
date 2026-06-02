@@ -9,13 +9,40 @@ import {
   HoverCardTrigger,
   HoverCardContent,
 } from '../src';
+import { useEffect, useState } from 'react';
 
-function App() {
+function App(){
+  const [darkMode, setDarkMode] =
+  useState(false);
+  useEffect(() => {
+  if (darkMode) {
+    document.documentElement.classList.add(
+      'dark'
+    );
+  } else {
+    document.documentElement.classList.remove(
+      'dark'
+    );
+  }
+}, [darkMode]);
+
   return (
-    <div className="max-w-7xl mx-auto p-8">
+    <div className="min-h-screen transition-colors duration-300 bg-white dark:bg-zinc-950 text-black dark:text-white">
+    <div className="max-w-7xl mx-auto p-8 bg-white dark:bg-zinc-950 text-black dark:text-white min-h-screen">
       <h1 className="text-4xl font-bold mb-8 text-primary-600">
         UI Library Demo
       </h1>
+      <button
+  onClick={() =>
+  {
+    console.log('Dark mode toggled'),
+    setDarkMode(!darkMode)
+  }
+  }
+  className="mb-8 rounded-xl border border-black/10 dark:border-white/10 px-4 py-2"
+>
+  Toggle Theme
+</button>
 
       <section className="mb-12">
         <h2 className="text-3xl font-semibold mb-4">Buttons</h2>
@@ -70,32 +97,131 @@ function App() {
 
 
       {/* HoverCard */}
-      <section className="mb-16 mt-10 ">
+      <section className="mb-16 mt-10  ">
   <h2 className="text-3xl font-semibold mb-6">
     Hover Card
   </h2>
 
+<div className="flex-col gap-10  items-center flex-wrap">
+
+{/* SIDES */}
+
+    <h1 className='font-semibold text-xl mb-1' >Card Sides</h1>
+<div className="flex gap-4 flex-wrap items-center mb-6"> 
+  
+  {/* TOP */}
   <HoverCard>
     <HoverCardTrigger>
-      <button className="rounded-xl bg-black text-white px-5 py-3">
-        Hover Me
+      <button className="px-4 py-2 bg-black text-white rounded-xl">
+        Top
       </button>
     </HoverCardTrigger>
 
-    <HoverCardContent>
-      <div className="space-y-2">
-        <h3 className="font-semibold text-lg">
-          Hover Card
-        </h3>
-
-        <p className="text-sm text-black/70">
-          This is a beautiful hover card
-          component with glassmorphism UI.
-        </p>
-      </div>
+    <HoverCardContent side="top">
+      Top Hover Card
     </HoverCardContent>
   </HoverCard>
+
+  {/* BOTTOM */}
+  <HoverCard>
+    <HoverCardTrigger>
+      <button className="px-4 py-2 bg-black text-white rounded-xl">
+        Bottom
+      </button>
+    </HoverCardTrigger>
+
+    <HoverCardContent side="bottom">
+      Bottom Hover Card
+    </HoverCardContent>
+  </HoverCard>
+
+  {/* LEFT */}
+  <HoverCard>
+    <HoverCardTrigger>
+      <button className="px-4 py-2 bg-black text-white rounded-xl">
+        Left
+      </button>
+    </HoverCardTrigger>
+
+    <HoverCardContent side="left">
+      Left Hover Card
+    </HoverCardContent>
+  </HoverCard>
+
+  {/* RIGHT */}
+  <HoverCard>
+    <HoverCardTrigger>
+      <button className="px-4 py-2 bg-black text-white rounded-xl">
+        Right
+      </button>
+    </HoverCardTrigger>
+
+    <HoverCardContent side="right">
+      Right Hover Card
+    </HoverCardContent>
+  </HoverCard> </div>
+
+
+
+{/* sizes */}
+<h1 className='font-semibold text-xl mb-1' >Card Sizes</h1>
+<div className="flex gap-4 flex-wrap items-center mb-6">
+  {/* SMALL */}
+  <HoverCard>
+    <HoverCardTrigger>
+      <button className="px-4 py-2 bg-black text-white rounded-xl">
+        Small
+      </button>
+    </HoverCardTrigger>
+
+    <HoverCardContent
+      side="top"
+      size="sm"
+    >
+      Small Hover Card
+    </HoverCardContent>
+  </HoverCard>
+
+  {/* MEDIUM */}
+  <HoverCard>
+    <HoverCardTrigger>
+      <button className="px-4 py-2 bg-black text-white rounded-xl">
+        Medium
+      </button>
+    </HoverCardTrigger>
+
+    <HoverCardContent
+      side="top"
+      size="md"
+    >
+      Medium Hover Card
+    </HoverCardContent>
+  </HoverCard>
+
+  {/* LARGE */}
+  <HoverCard>
+    <HoverCardTrigger>
+      <button className="px-4 py-2 bg-black text-white rounded-xl">
+        Large
+      </button>
+    </HoverCardTrigger>
+
+    <HoverCardContent
+      side="top"
+      size="lg"
+    >
+      Large Hover Card
+    </HoverCardContent>
+  </HoverCard>
+
+  </div>
+
+</div>
 </section>
+
+
+
+    </div>
     </div>
   );
 }
