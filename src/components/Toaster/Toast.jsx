@@ -12,22 +12,22 @@ import {
 
 const variants = {
   default:
-    'bg-zinc-900/15 text-black backdrop-blur-xl border border-gray-400/30',
+    'bg-zinc-900/15 text-black  backdrop-blur-xl border border-gray-400/30',
 
   success:
-    'bg-emerald-500/15 text-black backdrop-blur-xl border border-emerald-400/30',
+    'bg-emerald-500/15 text-black  backdrop-blur-xl border border-emerald-400/30',
 
   error:
-    'bg-red-500/15 text-black backdrop-blur-xl border border-red-400/30',
+    'bg-red-500/15 text-black  backdrop-blur-xl border border-red-400/30',
 
   warning:
-    'bg-yellow-500/15 text-black backdrop-blur-xl border border-yellow-400/30',
+    'bg-yellow-500/15 text-black  backdrop-blur-xl border border-yellow-400/30',
 
   info:
-    'bg-blue-500/15 text-black backdrop-blur-xl border border-blue-400/30',
+    'bg-blue-500/15 text-black  backdrop-blur-xl border border-blue-400/30',
 
   promise:
-    'bg-purple-500/15 text-black backdrop-blur-xl border border-purple-400/30',
+    'bg-purple-500/15 text-black  backdrop-blur-xl border border-purple-400/30',
 };
 
 const icons = {
@@ -109,12 +109,12 @@ export const Toast = ({
         )}
 
         <div className="flex-1">
-          <h3 className="font-semibold text-black">
+          <h3 className="font-semibold text-black dark:text-white">
             {title}
           </h3>
 
           {description && (
-            <p className="text-sm text-black/70">
+            <p className="text-sm text-black/70 dark:text-white">
               {description}
             </p>
           )}
@@ -122,9 +122,9 @@ export const Toast = ({
       </div>
 
       {/* PROGRESS BAR */}
-      <div className="h-1 w-full overflow-hidden rounded-full bg-black/10">
+      <div className="h-1 w-full overflow-hidden rounded-full bg-black/10 dark:bg-white/10">
         <div
-          className="h-full bg-black/50 animate-progress rounded-full"
+          className="h-full bg-black/50 dark:bg-white/50 animate-progress rounded-full"
           style={{
             animationDuration: `${duration}ms`,
           }}
