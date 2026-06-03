@@ -18,7 +18,7 @@ import {
 } from '../src';
 import { useEffect, useState } from 'react';
 import { Progress } from '../src';
-
+import { Separator } from '../src';
 
 
 function App(){
@@ -50,18 +50,29 @@ function App(){
       <h1 className="text-4xl font-bold mb-8 text-primary-600">
         UI Library Demo
       </h1>
-      <button
-  onClick={() =>
-  {
-    console.log('Dark mode toggled'),
-    setDarkMode(!darkMode)
-  }
-  }
-  className="mb-8 rounded-xl border border-black/10 dark:border-white/10 px-4 py-2"
+     <button
+  onClick={() => setDarkMode(!darkMode)}
+  className="
+    fixed
+    top-4
+    right-4
+    z-50
+    rounded-xl
+    border
+    border-black/50
+    dark:border-white/50
+    bg-white
+    dark:bg-zinc-900
+    px-4
+    py-2
+    shadow-lg
+    transition-all
+    duration-200
+    hover:scale-105
+  "
 >
-  Toggle Theme
+  {darkMode ? 'Light' : 'Dark'}
 </button>
-
       {/* BUTTONS SECTION */}
       <section className="mb-12">
         <h2 className="text-3xl font-semibold mb-4">
@@ -602,6 +613,37 @@ function App(){
   </div>
 
 </div>
+</section>
+
+
+
+
+{/* Separator */}
+  <section className="mb-16 mt-10">
+  <h2 className="text-3xl font-semibold mb-6">
+    Separator
+  </h2>
+
+  <div className="space-y-4 max-w-md">
+    <p>Above Separator</p>
+
+    <Separator />
+
+    <p>Below Separator</p>
+  </div>
+
+  <div className="flex h-20 items-center gap-4 mt-8">
+    <span>Profile</span>
+
+    <Separator orientation="vertical" />
+
+    <span>Settings</span>
+
+    <Separator orientation="vertical" />
+
+    <span>Logout</span>
+  </div>
+  
 </section>
 
 

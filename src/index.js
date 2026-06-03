@@ -14,7 +14,11 @@ export * from './components/Progress';
 
 // HoverCard components
 export * from './components/HoverCard';
-//
-export { Toast } from './components/Toaster/Toast';
-export { ToastContainer } from './components/Toaster/ToastContainer';
-export {useToast} from './components/Toaster/useToast'
+
+
+//Toaster components
+export * from './components/Toaster';
+
+// Separator
+export * from './components/Separator';
+

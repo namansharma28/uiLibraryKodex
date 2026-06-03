@@ -89,7 +89,7 @@ export const HoverCardContent = ({
       onMouseEnter={handleOpen}
       onMouseLeave={handleClose}
       className={cn(
-        'relative absolute z-50',
+        'absolute z-50',
 
         sideClasses[side],
 
