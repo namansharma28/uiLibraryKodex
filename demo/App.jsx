@@ -50,18 +50,29 @@ function App(){
       <h1 className="text-4xl font-bold mb-8 text-primary-600">
         UI Library Demo
       </h1>
-      <button
-  onClick={() =>
-  {
-    console.log('Dark mode toggled'),
-    setDarkMode(!darkMode)
-  }
-  }
-  className="mb-8 rounded-xl border border-black/10 dark:border-white/10 px-4 py-2"
+     <button
+  onClick={() => setDarkMode(!darkMode)}
+  className="
+    fixed
+    top-4
+    right-4
+    z-50
+    rounded-xl
+    border
+    border-black/50
+    dark:border-white/50
+    bg-white
+    dark:bg-zinc-900
+    px-4
+    py-2
+    shadow-lg
+    transition-all
+    duration-200
+    hover:scale-105
+  "
 >
-  Toggle Theme
+  {darkMode ? 'Light' : 'Dark'}
 </button>
-
       {/* BUTTONS SECTION */}
       <section className="mb-12">
         <h2 className="text-3xl font-semibold mb-4">
