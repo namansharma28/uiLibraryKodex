@@ -18,7 +18,7 @@ import {
 } from '../src';
 import { useEffect, useState } from 'react';
 import { Progress } from '../src';
-
+import { Separator } from '../src';
 
 
 function App(){
@@ -613,6 +613,37 @@ function App(){
   </div>
 
 </div>
+</section>
+
+
+
+
+{/* Separator */}
+  <section className="mb-16 mt-10">
+  <h2 className="text-3xl font-semibold mb-6">
+    Separator
+  </h2>
+
+  <div className="space-y-4 max-w-md">
+    <p>Above Separator</p>
+
+    <Separator />
+
+    <p>Below Separator</p>
+  </div>
+
+  <div className="flex h-20 items-center gap-4 mt-8">
+    <span>Profile</span>
+
+    <Separator orientation="vertical" />
+
+    <span>Settings</span>
+
+    <Separator orientation="vertical" />
+
+    <span>Logout</span>
+  </div>
+  
 </section>
 
 
