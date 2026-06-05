@@ -2,6 +2,7 @@ import {
   Button,
   Toast,
   ToastContainer,
+  ScrollArea,
   useToast,
 } from '../src';
 import { AspectRatio } from "../src";
@@ -19,7 +20,7 @@ import {
 import { useEffect, useState } from 'react';
 import { Progress } from '../src';
 import { Separator } from '../src';
-
+import { galleryItems } from './assests/galleryData';
 
 function App(){
   const [darkMode, setDarkMode] =
@@ -372,8 +373,11 @@ function App(){
         </div>
       </section>
 
+
+
+
 {/* Progress */}
-      <section className="mb-16 mt-10">
+      <section className="mb-16  mt-10">
   <h2 className="text-3xl font-semibold mb-6">
     Progress
   </h2>
@@ -646,6 +650,123 @@ function App(){
   
 </section>
 
+
+{/* ScrollArea */}
+<section className="mb-16 mt-10">
+  <h2 className="text-3xl font-semibold mb-6">
+    Scroll Area
+  </h2>
+
+  {/* Vertical Scroll */}
+  <h3 className="text-xl font-semibold mb-4">
+    Vertical Scroll
+  </h3>
+
+  <ScrollArea
+    className="
+      h-72
+      w-80
+      rounded-3xl
+      
+      border border-black/10 dark:border-white/20
+      bg-white/10
+      backdrop-blur-xl
+      p-4 pr-1
+      shadow-xl
+    "
+  >
+    <div className="space-y-3 pr-3">
+      {Array.from({ length: 30 }).map((_, i) => (
+        <div
+          key={i}
+          className="
+            rounded-xl
+            border border-black/10 dark:border-white/20
+            bg-white/5
+            backdrop-blur-md
+            p-4
+            transition-all
+            duration-300
+            hover:bg-white/10
+            hover:shadow-lg
+            cursor-pointer
+          "
+        >
+          <h4 className="font-medium">
+            Notification {i + 1}
+          </h4>
+
+          <p className="mt-1 text-sm opacity-70">
+            This is a sample scrollable item.
+          </p>
+        </div>
+      ))}
+    </div>
+  </ScrollArea>
+
+  {/* Horizontal Scroll */}
+  <div className="mt-10">
+    <h3 className="text-xl font-semibold mb-4">
+      Image Gallery
+    </h3>
+
+    <ScrollArea
+      orientation="horizontal"
+      className="
+        w-full
+        rounded-3xl
+        border border-black/10 dark:border-white/20
+        bg-white/10
+        backdrop-blur-xl
+        p-5
+        shadow-xl
+      "
+    >
+      <div className="flex gap-6 px-2 py-2 pb-4">
+        {galleryItems.map((item) => (
+          <div
+            key={item.title}
+            className="
+              w-72
+              shrink-0
+              rounded-2xl
+              border border-black/10 dark:border-white/20
+              bg-white/5
+              backdrop-blur-md
+              overflow-hidden
+              transition-all
+              duration-300
+              hover:scale-[1.02]
+              hover:shadow-xl
+              cursor-pointer
+            "
+          >
+            <img
+              src={item.image}
+              alt={item.title}
+              className="
+                h-80
+                w-full
+                object-cover
+                object-top
+              "
+            />
+
+            <div className="p-4">
+              <p className="font-medium">
+                {item.title}
+              </p>
+
+              <p className="mt-1 text-sm opacity-70">
+                Scroll Area Gallery Demo
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </ScrollArea>
+  </div>
+</section>
 
 
     </div>
