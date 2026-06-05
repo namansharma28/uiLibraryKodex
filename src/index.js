@@ -15,6 +15,8 @@ export * from './components/Progress';
 // HoverCard components
 export * from './components/HoverCard';
 
+// aspect ratio components
+export * from './components/Aspect Ratio';
 
 //Toaster components
 export * from './components/Toaster';
@@ -22,3 +24,5 @@ export * from './components/Toaster';
 // Separator
 export * from './components/Separator';
 
+// ScrollArea
+export * from './components/ScrollArea';
