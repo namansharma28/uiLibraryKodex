@@ -22,3 +22,5 @@ export * from './components/Toaster';
 // Separator
 export * from './components/Separator';
 
+// Badge
+export * from './components/Badge';

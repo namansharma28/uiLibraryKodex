@@ -3,8 +3,16 @@ import {
   Toast,
   ToastContainer,
   useToast,
+  AspectRatio,
+  HoverCard,
+  HoverCardTrigger,
+  HoverCardContent,
+  Progress,
+  Separator,
+  Breadcrumb,
+  Badge,
 } from '../src';
-import { AspectRatio } from "../src";
+
 
 import { 
   Tooltip,
@@ -646,7 +654,58 @@ function App(){
   
 </section>
 
+      {/* ─── Badge ─────────────────────────────────────────────────── */}
+      <section className="mb-16 mt-10">
+        <h2 className="text-3xl font-semibold mb-6">Badge</h2>
+        
+        <div className="space-y-8">
+          {/* Variants */}
+          <div>
+            <h3 className="text-xl font-medium mb-3 text-zinc-500 dark:text-zinc-400">Variants</h3>
+            <div className="flex gap-3 flex-wrap">
+              <Badge variant="default">Default</Badge>
+              <Badge variant="primary">Primary</Badge>
+              <Badge variant="secondary">Secondary</Badge>
+              <Badge variant="success">Success</Badge>
+              <Badge variant="warning">Warning</Badge>
+              <Badge variant="destructive">Destructive</Badge>
+              <Badge variant="outline">Outline</Badge>
+              <Badge variant="gradient">Gradient</Badge>
+            </div>
+          </div>
 
+          {/* Sizes */}
+          <div>
+            <h3 className="text-xl font-medium mb-3 text-zinc-500 dark:text-zinc-400">Sizes</h3>
+            <div className="flex gap-3 flex-wrap items-center">
+              <Badge size="sm" variant="primary">Small</Badge>
+              <Badge size="md" variant="primary">Medium</Badge>
+              <Badge size="lg" variant="primary">Large</Badge>
+            </div>
+          </div>
+
+          {/* Shapes */}
+          <div>
+            <h3 className="text-xl font-medium mb-3 text-zinc-500 dark:text-zinc-400">Shapes</h3>
+            <div className="flex gap-3 flex-wrap">
+              <Badge variant="secondary" pill={true}>Pill Shape</Badge>
+              <Badge variant="secondary" pill={false}>Rounded Square</Badge>
+            </div>
+          </div>
+
+          {/* Dot Indicator & Interactive */}
+          <div>
+            <h3 className="text-xl font-medium mb-3 text-zinc-500 dark:text-zinc-400">Status Indicators & Interaction</h3>
+            <div className="flex gap-3 flex-wrap items-center">
+              <Badge variant="success" dot>Active Dot</Badge>
+              <Badge variant="destructive" dot dotPulse>Alert (Pulsing)</Badge>
+              <Badge variant="primary" dot dotPulse>Pulsing Primary</Badge>
+              <Badge variant="gradient" dot dotPulse>Gradient Dot</Badge>
+              <Badge variant="default" interactive onClick={() => alert('Badge clicked!')}>Clickable Badge</Badge>
+            </div>
+          </div>
+        </div>
+      </section>
 
     </div>
     
