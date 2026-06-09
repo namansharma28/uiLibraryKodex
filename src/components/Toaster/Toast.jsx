@@ -17,14 +17,12 @@ const variants = {
   success:
     'bg-emerald-500/15 text-black  backdrop-blur-xl border border-emerald-400/30',
 
-  error:
-    'bg-red-500/15 text-black  backdrop-blur-xl border border-red-400/30',
+  error: 'bg-red-500/15 text-black  backdrop-blur-xl border border-red-400/30',
 
   warning:
     'bg-yellow-500/15 text-black  backdrop-blur-xl border border-yellow-400/30',
 
-  info:
-    'bg-blue-500/15 text-black  backdrop-blur-xl border border-blue-400/30',
+  info: 'bg-blue-500/15 text-black  backdrop-blur-xl border border-blue-400/30',
 
   promise:
     'bg-purple-500/15 text-black  backdrop-blur-xl border border-purple-400/30',
@@ -48,8 +46,7 @@ export const Toast = ({
   duration = 4000,
   position,
 }) => {
-  const [isClosing, setIsClosing] =
-    useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -66,8 +63,8 @@ export const Toast = ({
   const animationClass = isClosing
     ? 'animate-toast-out'
     : position?.includes('bottom')
-    ? 'animate-toast-in-bottom'
-    : 'animate-toast-in-top';
+      ? 'animate-toast-in-bottom'
+      : 'animate-toast-in-top';
 
   const Icon = icons[variant];
 
@@ -89,29 +86,22 @@ export const Toast = ({
               className={cn(
                 'w-5 h-5 shrink-0',
 
-                variant === 'success' &&
-                  'text-emerald-600',
+                variant === 'success' && 'text-emerald-600',
 
-                variant === 'info' &&
-                  'text-blue-600',
+                variant === 'info' && 'text-blue-600',
 
-                variant === 'warning' &&
-                  'text-yellow-600',
+                variant === 'warning' && 'text-yellow-600',
 
-                variant === 'error' &&
-                  'text-red-600',
+                variant === 'error' && 'text-red-600',
 
-                variant === 'promise' &&
-                  'text-purple-600 animate-spin'
+                variant === 'promise' && 'text-purple-600 animate-spin'
               )}
             />
           </div>
         )}
 
         <div className="flex-1">
-          <h3 className="font-semibold text-black dark:text-white">
-            {title}
-          </h3>
+          <h3 className="font-semibold text-black dark:text-white">{title}</h3>
 
           {description && (
             <p className="text-sm text-black/70 dark:text-white">

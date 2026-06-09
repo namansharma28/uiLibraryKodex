@@ -3,14 +3,9 @@ import PropTypes from 'prop-types';
 
 const HoverCardContext = createContext();
 
-export const useHoverCard = () =>
-  useContext(HoverCardContext);
+export const useHoverCard = () => useContext(HoverCardContext);
 
-export const HoverCard = ({
-  children,
-  openDelay = 150,
-  closeDelay = 150,
-}) => {
+export const HoverCard = ({ children, openDelay = 150, closeDelay = 150 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   let openTimeout;
@@ -40,9 +35,7 @@ export const HoverCard = ({
         handleClose,
       }}
     >
-      <div className="relative inline-block">
-        {children}
-      </div>
+      <div className="relative inline-block">{children}</div>
     </HoverCardContext.Provider>
   );
 };

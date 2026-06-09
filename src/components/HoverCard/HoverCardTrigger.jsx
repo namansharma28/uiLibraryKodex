@@ -1,13 +1,8 @@
 import PropTypes from 'prop-types';
 import { useHoverCard } from './HoverCard';
 
-export const HoverCardTrigger = ({
-  children,
-}) => {
-  const {
-    handleOpen,
-    handleClose,
-  } = useHoverCard();
+export const HoverCardTrigger = ({ children }) => {
+  const { handleOpen, handleClose } = useHoverCard();
 
   return (
     <div

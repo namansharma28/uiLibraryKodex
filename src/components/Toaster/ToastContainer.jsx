@@ -6,23 +6,13 @@ const positions = {
   'top-left': 'top-5 left-5',
   'bottom-right': 'bottom-5 right-5',
   'bottom-left': 'bottom-5 left-5',
-  'top-center':
-    'top-5 left-1/2 -translate-x-1/2',
-  'bottom-center':
-    'bottom-5 left-1/2 -translate-x-1/2',
+  'top-center': 'top-5 left-1/2 -translate-x-1/2',
+  'bottom-center': 'bottom-5 left-1/2 -translate-x-1/2',
 };
 
-export const ToastContainer = ({
-  children,
-  position = 'top-right',
-}) => {
+export const ToastContainer = ({ children, position = 'top-right' }) => {
   return (
-    <div
-      className={cn(
-        'fixed z-50 flex flex-col gap-3',
-        positions[position]
-      )}
-    >
+    <div className={cn('fixed z-50 flex flex-col gap-3', positions[position])}>
       {children}
     </div>
   );

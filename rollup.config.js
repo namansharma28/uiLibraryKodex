@@ -20,12 +20,15 @@ export default {
   ],
   plugins: [
     peerDepsExternal(),
-    resolve(),
+    resolve({
+      extensions: ['.js', '.jsx'],
+    }),
     commonjs(),
     babel({
       babelHelpers: 'bundled',
       exclude: 'node_modules/**',
       presets: ['@babel/preset-react'],
+      extensions: ['.js', '.jsx'],
     }),
     postcss({
       extract: true,

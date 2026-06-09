@@ -3,23 +3,21 @@ import {
   Toast,
   ToastContainer,
   useToast,
+  AspectRatio,
+  HoverCard,
+  HoverCardTrigger,
+  HoverCardContent,
+  Progress,
+  Separator,
+  Breadcrumb,
 } from '../src';
-import { AspectRatio } from "../src";
 
 import { 
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from '../src/components/Tooltip/Tooltip';
-import {
-  HoverCard,
-  HoverCardTrigger,
-  HoverCardContent,
-} from '../src';
 import { useEffect, useState } from 'react';
-import { Progress } from '../src';
-import { Separator } from '../src';
-
 
 function App(){
   const [darkMode, setDarkMode] =
@@ -73,7 +71,8 @@ function App(){
 >
   {darkMode ? 'Light' : 'Dark'}
 </button>
-      {/* BUTTONS SECTION */}
+
+      {/* ─── Buttons ───────────────────────────────────────────────── */}
       <section className="mb-12">
         <h2 className="text-3xl font-semibold mb-4">
           Buttons
@@ -117,9 +116,9 @@ function App(){
           </Button>
         </div>
       </section>
-      
+
       {/* Aspect Ratio */}
-      <section>
+      <section className="mb-12">
         <h1 className="text-3xl font-semibold mb-4">Aspect Ratio</h1>
         
         <div className="flex gap-6 flex-wrap">
@@ -212,8 +211,53 @@ function App(){
           </AspectRatio>
           <h3 className="text-lg font-medium mt-6 mb-3 text-gray-600">Univisium Aspect Ratio(Used in some modern cinematic content)</h3>
         </div>
+        </div>
+      </section>
 
+      {/* ─── Breadcrumb ────────────────────────────────────────────── */}
+      <section className="mb-12">
+        <h2 className="text-3xl font-semibold mb-4">Breadcrumb</h2>
 
+        <h3 className="text-xl font-medium mb-3 text-gray-600">
+          Basic Breadcrumb
+        </h3>
+        <div className="mb-6 p-4 border border-gray-200 rounded-lg">
+          <Breadcrumb
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Products', href: '/products' },
+              { label: 'Headphones' },
+            ]}
+          />
+        </div>
+
+        <h3 className="text-xl font-medium mb-3 text-gray-600">
+          Custom Separator
+        </h3>
+        <div className="mb-6 p-4 border border-gray-200 rounded-lg">
+          <Breadcrumb
+            separator="/"
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Documentation', href: '/docs' },
+              { label: 'Getting Started' },
+            ]}
+          />
+        </div>
+
+        <h3 className="text-xl font-medium mb-3 text-gray-600">
+          Long Path
+        </h3>
+        <div className="mb-6 p-4 border border-gray-200 rounded-lg">
+          <Breadcrumb
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Dashboard', href: '/dashboard' },
+              { label: 'Analytics', href: '/dashboard/analytics' },
+              { label: 'Reports', href: '/dashboard/analytics/reports' },
+              { label: 'Monthly Summary' },
+            ]}
+          />
         </div>
       </section>
 
